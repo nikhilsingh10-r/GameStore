@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboards - Mini Games Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🎮 Mini Games Hub</a>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="hero">
+            <h2 class="hero-title">Leaderboards</h2>
+            <p class="hero-subtitle">See how you rank against other players</p>
+        </header>
+
+        <div class="leaderboard-container">
+            <div class="leaderboard-controls">
+                <select id="gameSelect" class="control-select">
+                    <option value="snake">Snake</option>
+                    <option value="tictactoe">Tic Tac Toe</option>
+                    <option value="memory">Memory Match</option>
+                    <option value="puzzle">Sliding Puzzle</option>
+                    <option value="word">Word Guess</option>
+                </select>
+                
+                <select id="categorySelect" class="control-select">
+                    <option value="high_score">High Score</option>
+                    <option value="best_time">Best Time</option>
+                    <option value="win_streak">Win Streak</option>
+                </select>
+                
+                <button id="refreshBtn" class="control-btn">Refresh</button>
+            </div>
+
+            <div class="leaderboard-grid">
+                <div class="leaderboard-section">
+                    <h3 class="leaderboard-title">Top Players</h3>
+                    <div class="leaderboard-list" id="leaderboardList">
+                        <div class="loading">Loading leaderboard...</div>
+                    </div>
+                </div>
+
+                <div class="leaderboard-section">
+                    <h3 class="leaderboard-title">Global Stats</h3>
+                    <div class="global-stats-display" id="globalStatsDisplay">
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalUsers">0</span>
+                            <span class="stat-label">Total Players</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalGames">0</span>
+                            <span class="stat-label">Games Played</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="activeToday">0</span>
+                            <span class="stat-label">Active Today</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Mini Games Hub. Built with ❤️ and vanilla JavaScript.</p>
+    </footer>
+
+    <script src="client/db-client.js"></script>
+    <script src="theme.js"></script>
+    <script src="leaderboard.js"></script>
+</body>
+</html>

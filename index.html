@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Games Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">🎮 Mini Games Hub</h1>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="hero">
+            <h2 class="hero-title">Choose Your Game</h2>
+            <p class="hero-subtitle">Five exciting mini-games to challenge your skills</p>
+            <div class="hero-stats">
+                <div class="global-stat">
+                    <span class="stat-number" id="totalGamesPlayed">0</span>
+                    <span class="stat-label">Games Played</span>
+                </div>
+                <div class="global-stat">
+                    <span class="stat-number" id="totalTimeSpent">0m</span>
+                    <span class="stat-label">Time Spent</span>
+                </div>
+                <div class="global-stat">
+                    <span class="stat-number" id="favoriteGame">None</span>
+                    <span class="stat-label">Favorite Game</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="games-grid">
+            <div class="game-card" data-game="snake">
+                <div class="game-icon">🐍</div>
+                <h3 class="game-title">Snake</h3>
+                <p class="game-description">Guide the snake to eat food and grow longer without hitting the walls or yourself!</p>
+                <div class="game-stats-preview">
+                    <span class="preview-stat">High Score: <span id="snakeHighScore">0</span></span>
+                    <span class="preview-stat">Plays: <span id="snakePlays">0</span></span>
+                </div>
+                <button class="play-button" onclick="window.location.href='snake.html'">Play Now</button>
+            </div>
+
+            <div class="game-card" data-game="tictactoe">
+                <div class="game-icon">⭕</div>
+                <h3 class="game-title">Tic Tac Toe</h3>
+                <p class="game-description">Classic strategy game - get three in a row to win against the computer!</p>
+                <div class="game-stats-preview">
+                    <span class="preview-stat">Wins: <span id="tictactoeWins">0</span></span>
+                    <span class="preview-stat">Plays: <span id="tictactoePlays">0</span></span>
+                </div>
+                <button class="play-button" onclick="window.location.href='tictactoe.html'">Play Now</button>
+            </div>
+
+            <div class="game-card" data-game="memory">
+                <div class="game-icon">🧠</div>
+                <h3 class="game-title">Memory Match</h3>
+                <p class="game-description">Test your memory by matching pairs of cards in this challenging puzzle game!</p>
+                <div class="game-stats-preview">
+                    <span class="preview-stat">Best Time: <span id="memoryBestTime">--:--</span></span>
+                    <span class="preview-stat">Plays: <span id="memoryPlays">0</span></span>
+                </div>
+                <button class="play-button" onclick="window.location.href='memory.html'">Play Now</button>
+            </div>
+
+            <div class="game-card" data-game="puzzle">
+                <div class="game-icon">🧩</div>
+                <h3 class="game-title">Sliding Puzzle</h3>
+                <p class="game-description">Arrange the numbered tiles in order by sliding them into the empty space!</p>
+                <div class="game-stats-preview">
+                    <span class="preview-stat">Best Moves: <span id="puzzleBestMoves">--</span></span>
+                    <span class="preview-stat">Plays: <span id="puzzlePlays">0</span></span>
+                </div>
+                <button class="play-button" onclick="window.location.href='puzzle.html'">Play Now</button>
+            </div>
+
+            <div class="game-card" data-game="word">
+                <div class="game-icon">📝</div>
+                <h3 class="game-title">Word Guess</h3>
+                <p class="game-description">Guess the hidden word with limited tries. Each guess gives you clues!</p>
+                <div class="game-stats-preview">
+                    <span class="preview-stat">Streak: <span id="wordStreak">0</span></span>
+                    <span class="preview-stat">Plays: <span id="wordPlays">0</span></span>
+                </div>
+                <button class="play-button" onclick="window.location.href='word.html'">Play Now</button>
+            </div>
+        </section>
+
+        <section class="quick-access">
+            <div class="quick-access-buttons">
+                <a href="leaderboard.html" class="quick-access-btn">
+                    <span class="btn-icon">🏆</span>
+                    <span class="btn-text">Leaderboards</span>
+                </a>
+                <button class="quick-access-btn" id="syncDataBtn">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">Sync Data</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid" id="achievementsGrid">
+                <!-- Achievements will be loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Mini Games Hub. Built with ❤️ and vanilla JavaScript.</p>
+    </footer>
+
+    <script src="client/db-client.js"></script>
+    <script src="theme.js"></script>
+    <script src="stats.js"></script>
+</body>
+</html>

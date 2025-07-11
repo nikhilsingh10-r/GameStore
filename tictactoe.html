@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Mini Games Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🎮 Mini Games Hub</a>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="game-container">
+        <header class="game-header">
+            <h1 class="game-title">⭕ Tic Tac Toe</h1>
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">Player Wins:</span>
+                    <span class="stat-value" id="playerWins">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Computer Wins:</span>
+                    <span class="stat-value" id="computerWins">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Draws:</span>
+                    <span class="stat-value" id="draws">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <div class="game-status">
+                <p id="gameStatus">Your turn! Click a cell to play.</p>
+            </div>
+            
+            <div class="tic-tac-toe-board" id="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+
+            <div class="game-controls">
+                <button class="control-btn" id="newGameBtn">New Game</button>
+                <button class="control-btn" id="resetStatsBtn">Reset Stats</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="client/db-client.js"></script>
+    <script src="theme.js"></script>
+    <script src="tictactoe.js"></script>
+</body>
+</html>
